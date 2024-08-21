@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickSight Embedded Dashboard</title>
+    <style>
+        body, html {
+            margin: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        #dashboardContainer {
+            width: 80%;
+            height: 80%;
+            border: 2px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="dashboardContainer"></div>
+
+    <script src="https://unpkg.com/amazon-quicksight-embedding-sdk@1.31.0/dist/quicksight-embedding-js-sdk.min.js"></script>
+    <script>
+        // Replace this URL with the one you provide
+        const embedUrl = 'https://us-east-1.quicksight.aws.amazon.com/embed/3984c0793cea4325855db1004c1ba2cb/dashboards/356c549b-6cd3-494a-8b1b-59561293c1d1?code=AYABeBSvT0V89eaBcDfERd8wtMQAAAABAAdhd3Mta21zAEthcm46YXdzOmttczp1cy1lYXN0LTE6MjU5NDgwNDYyMTMyOmtleS81NGYwMjdiYy03MDJhLTQxY2YtYmViNS0xNDViOTExNzFkYzMAuAECAQB4xtoTZf7IGoPQKGWjcNLglYg8fHKEoB_X6wbByfSPUT0BZlJ8Az427KHrGNXFCdrrEQAAAH4wfAYJKoZIhvcNAQcGoG8wbQIBADBoBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDMM6Rh1oZD0fU3NIHAIBEIA7Wo3C9KCVUkdupZtBNbvT0obqkkK9KyVwuzy9r0cmcuxiD40BQeBPkUi2r0XImCfmHu5DO_Jksdm94bICAAAAAAwAABAAAAAAAAAAAAAAAAAAwW4ywoqqsFBmSY-Cf4YSs_____8AAAABAAAAAAAAAAAAAAABAAAAm2UxSPZLEFzrFufHyUHi4OS4QYuIgOD7q-qupajpCxjeJ6Z1iKXs4cJDbdr9MlCx4FFx7IZHnH2mfhDDVXn0SlqjzAgBj9vm5uFBXrohsiVMBjeW9vwSdRcQZiuiD3WnJTX8I9Ii5_UY17itncDuiRC3p4tyMbnrr-LK98Wo6zKuhjTP-4YgNBFGHNbnKlCVAFqmCiL2qQ_rOaKffbLxcXOnW_HmP0p2L2oCvA%3D%3D&identityprovider=quicksight&isauthcode=true';
+
+        const containerDiv = document.getElementById("dashboardContainer");
+        const options = {
+            url: embedUrl,
+            container: containerDiv,
+            scrolling: "no",
+            height: "100%",
+            width: "100%",
+            footerPaddingEnabled: true,
+        };
+        const dashboard = QuickSightEmbedding.embedDashboard(options);
+    </script>
+</body>
+</html>
+```
